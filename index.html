@@ -14,9 +14,16 @@
   data-width="450"
   data-show-faces="true">
 </div>    
-    agmin
+    <a href="javascript:void(0)" onClick="niu()">agmin</div>
   </body>
         <script>
+function niu() {        
+  FB.api("491432140996544/feed",function(response){
+     var posts = response.data // posts.lenghth == 24
+    console.log(response);
+  }) ;        
+}        
+        
           window.fbAsyncInit = function() {
             FB.init({
               appId      : '1205272002845732',
