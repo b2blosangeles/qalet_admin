@@ -1,18 +1,3 @@
-/*
-var o = (function () { 
-	var obj =  function (pkg, env, req, res) {
-		this.load = function() {
-			res.send(new Date().toString());
-		};
-	};
-	
-	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-		module.exports = obj;
-	}
-	
-})();
+var o = require('obj.inc.js');
 var v = new o(pkg, env, req, res);
 v.load();
-*/
-
-res.send(new Date().toString());
