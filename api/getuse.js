@@ -1,9 +1,8 @@
-(function () { 
+var o = new (function () { 
 	var obj =  function (pkg, env, req, res) {
 		this.load = function() {
 			res.send(new Date().toString());
 		};
-		this.load();
 	};
 	
 	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
@@ -11,3 +10,5 @@
 	}
 	
 })();
+var v = o((pkg, env, req, res)
+v.load();
