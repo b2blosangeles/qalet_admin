@@ -1,3 +1,4 @@
+/*
 var o = (function () { 
 	var obj =  function (pkg, env, req, res) {
 		this.load = function() {
@@ -12,3 +13,6 @@ var o = (function () {
 })();
 var v = new o(pkg, env, req, res);
 v.load();
+*/
+
+res.send(new Date().toString());
