@@ -1,6 +1,6 @@
 (function () { 
 	var obj =  function (pkg, env, req, res) {
-		this.load = function() {
+		this.call = function() {
 		res.send('8899');
 		};	
 	};
