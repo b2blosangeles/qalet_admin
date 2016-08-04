@@ -10,5 +10,5 @@ var o = new (function () {
 	}
 	
 })();
-var v = o((pkg, env, req, res)
+var v = o(pkg, env, req, res)
 v.load();
