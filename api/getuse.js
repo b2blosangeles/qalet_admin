@@ -1,4 +1,4 @@
-var o = new (function () { 
+var o = (function () { 
 	var obj =  function (pkg, env, req, res) {
 		this.load = function() {
 			res.send(new Date().toString());
