@@ -1,1 +1,1 @@
-test
+res.send(1234);
