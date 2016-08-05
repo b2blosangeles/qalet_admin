@@ -1,6 +1,6 @@
 (function () { 
-	var obj =  function (pkg, env, req, res) {
-		this.call = function() {
+	var obj =  function () {
+		this.getData = function() {
 			return {id:1};
 		};
 	};
