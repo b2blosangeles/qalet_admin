@@ -4,10 +4,13 @@ var app = angular.module('qaletApp', [
 ]);
 app.controller('mainController', function($rootScope, $scope, $location, $cookies){ 
 	$rootScope.$on('$routeChangeStart', function(){ 
-		$rootScope._super={};
+		if (!$rootScope._super) $rootScope._super={};
 		$rootScope._super.option = $location.$$path;
-		console.log($rootScope._super);
 	});
+});
+
+app.controller('topMenuController', function($rootScope, $scope, $location, $cookies){ 
+
 });
 
 app.config(function($routeProvider) {
