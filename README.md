@@ -1,1 +1,1 @@
-# qalet_admin
+# QALET
