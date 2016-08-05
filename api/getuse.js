@@ -2,7 +2,9 @@
 (function () { 
 	var obj =  function (pkg, env, req, res) {
 		this.call = function() {
-			res.send(new Date().toString() + '==niu==' + __dirname);
+			var JYclass = require( __dirname +'/inc/jiaoyouList.inc.js');
+			var o = new JYclass(pkg, env, req, res);
+			res.send(new Date().toString() + '==AAA==' + __dirname);
 		};
 	};
 	
