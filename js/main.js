@@ -4,11 +4,20 @@ var app = angular.module('qaletApp', [
 ]);
 app.controller('homepageController', function($rootScope, $scope, $cookies){ 
 
-		$scope.maxsize = {
-			"myFavorite":{max_size:4, item_class:'col-lg-3 col-md-3 col-sm-6 col-xs-6', box_class:'col-lg-12 col-md-12 col-sm-12'},
-			"currentHot":{max_size:2, item_class:'col-lg-6 col-md-6 col-sm-6 col-xs-6', box_class:'col-lg-12 col-md-12 col-sm-12'},
-			"recentEvents":{max_size:6, item_class:'col-lg-6 col-md-6 col-sm-6 col-xs-12', box_class:'col-lg-12 col-md-12 col-sm-12'}			
-		}		
+});
 
-
+app.config(function($routeProvider) {
+  $routeProvider.when('/',              {templateUrl: 'home.html', reloadOnSearch: false});
+  $routeProvider.when('/scroll',        {templateUrl: 'scroll.html', reloadOnSearch: false}); 
+  $routeProvider.when('/toggle',        {templateUrl: 'toggle.html', reloadOnSearch: false}); 
+  $routeProvider.when('/tabs',          {templateUrl: 'tabs.html', reloadOnSearch: false}); 
+  $routeProvider.when('/accordion',     {templateUrl: 'accordion.html', reloadOnSearch: false}); 
+  $routeProvider.when('/overlay',       {templateUrl: 'overlay.html', reloadOnSearch: false}); 
+  $routeProvider.when('/forms',         {templateUrl: 'forms.html', reloadOnSearch: false});
+  $routeProvider.when('/dropdown',      {templateUrl: 'dropdown.html', reloadOnSearch: false});
+  $routeProvider.when('/touch',         {templateUrl: 'touch.html', reloadOnSearch: false});
+  $routeProvider.when('/swipe',         {templateUrl: 'swipe.html', reloadOnSearch: false});
+  $routeProvider.when('/drag',          {templateUrl: 'drag.html', reloadOnSearch: false});
+  $routeProvider.when('/drag2',         {templateUrl: 'drag2.html', reloadOnSearch: false});
+  $routeProvider.when('/carousel',      {templateUrl: 'carousel.html', reloadOnSearch: false});
 });
