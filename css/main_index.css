@@ -32,7 +32,8 @@ body {
     height: 240px;
     /*padding-left: 20px;*/
 	background: url("../images/qalet_logo.png") 0 0;
-	margin: 48px;
+	margin-top: 48px;
+	margin-bottom: 48px;
 }
 /* Custom page CSS
 -------------------------------------------------- */
