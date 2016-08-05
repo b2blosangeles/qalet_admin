@@ -3,8 +3,8 @@
 	var obj =  function (pkg, env, req, res) {
 		this.call = function() {
 			var JYclass = require( __dirname +'/inc/jiaoyouList.inc.js');
-			var o = new JYclass(pkg, env, req, res);
-			res.send(o.call());
+			var o = new JYclass();
+			res.send(o.getData());
 		};
 	};
 	
