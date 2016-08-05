@@ -11,7 +11,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $cookie
 
 app.controller('topMenuController', function($rootScope, $scope, $location, $cookies){ 
 	$scope.isActive = function(v) {
-		return ($location.$$path == v)?'action':'';
+		return ($location.$$path == v)?'active':'';
 	} 
 });
 
