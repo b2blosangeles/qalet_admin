@@ -1,2 +1,7 @@
 // res.send(new Date().toString() + '==CC==' + dirname);
-res.send(env);
+			delete require.cache[env.space_path + 'inc/jiaoyouList.inc.js'];
+			var JYclass = require(env.space_path  + 'inc/jiaoyouList.inc.js');
+			var o = new JYclass();
+			res.send(o.getData());
+
+//res.send(env);
