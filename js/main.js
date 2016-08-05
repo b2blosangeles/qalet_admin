@@ -4,7 +4,6 @@ var app = angular.module('qaletApp', [
 ]);
 app.controller('mainController', function($rootScope, $scope, $cookies){ 
 	$rootScope.$on('$routeChangeStart', function(){ 
-		alert(1);
 		$rootScope._super={};
 		$rootScope._super.status = false;
 	});
