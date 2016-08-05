@@ -1,1 +1,1 @@
-res.send(new Date().toString() + '==CC==' + __dirname);
+res.send(new Date().toString() + '==CC==' + dirname);
