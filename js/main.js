@@ -1,6 +1,6 @@
 var app = angular.module('qaletApp', [
-  'ngRoute',
-  'ngCookies'
+  'ngCookies',
+  'ngRoute'
 ]);
 app.controller('homepageController', function($rootScope, $scope, $window, $http, $compile, $timeout, $cookies){ 
 
