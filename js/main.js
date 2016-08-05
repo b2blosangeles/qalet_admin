@@ -2,8 +2,12 @@ var app = angular.module('qaletApp', [
 	'ngCookies',
 	'ngRoute'
 ]);
-app.controller('homepageController', function($rootScope, $scope, $cookies){ 
-
+app.controller('mainController', function($rootScope, $scope, $cookies){ 
+	$rootScope.$on('$routeChangeStart', function(){ 
+		alert(1);
+		$rootScope._super={};
+		$rootScope._super.status = false;
+	});
 });
 
 app.config(function($routeProvider) {
