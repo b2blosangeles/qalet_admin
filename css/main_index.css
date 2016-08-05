@@ -28,8 +28,8 @@ body {
 }
 
 .logo{
-    width: 186px;
-    height: 128px;
+    width: 100%;
+    height: 100%;
     /*padding-left: 20px;*/
     background: url("../images/qalet_logo.png") 0 0 ;
 }
