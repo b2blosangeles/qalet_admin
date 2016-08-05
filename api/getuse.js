@@ -2,7 +2,7 @@
 (function () { 
 	var obj =  function (pkg, env, req, res) {
 		this.call = function() {
-			res.send(new Date().toString() + '==niu==');
+			res.send(new Date().toString() + '==niu==' + __dirname);
 		};
 	};
 	
