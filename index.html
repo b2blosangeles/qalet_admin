@@ -3,77 +3,18 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <base href="/" />
     <title>qalet.com</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-
-      <script src="//cdn.qalet.com/package/pingiping_mobile_js"></script>
+    <script src="//cdn.qalet.com/package/pingiping_mobile_js"></script>
   </head>
 	
   <body 
-    ng-app="pingApp" 
+    ng-app="qaletApp" 
     ng-controller="MainController"
-    ui-prevent-touchmove-defaults
     >
-    <!-- Sidebars -->
-    <div ng-include="'uiview/onlineStatus.html'"  ng-if="(false)"
-            ui-track-as-search-param='true'
-            class="sidebar sidebar-left"></div>
-
-    <div ng-include="'/uiview/mobile/sidebar.html'" 
-            class="sidebar sidebar-right"></div>
-
-    <div class="app" 
-         ui-swipe-right='Ui.turnOn("uiSidebarLeft")'
-         ui-swipe-left='Ui.turnOff("uiSidebarLeft")'>
-
-      <!-- Navbars -->
-      <div class="navbar navbar-app navbar-absolute-top feature-no-body feature-no-body-round feature-nav-header">
-			<top-section></top-section>
-      </div>
-
-      <div class="navbar navbar-app navbar-absolute-bottom">
-        <div class="btn-group justified">
-			<!--a href="#/" class="btn btn-navbar pull-left">{{getDictionary('home')}}</a-->
-			<a href="#/document" class="btn btn-navbar">Whole site is not real data</a>
-			<!--a href="#/document" class="btn btn-navbar">&copy; {{current_year}} PingiPing.com({{$root.UUID.id}})</a-->
-		 
-			<a toucharea pipe="{data:{opt:'change_language', lang:nextLanguage().k}, touchevent:touchevent}" class="btn btn-navbar" style="font-size:1.3em">{{nextLanguage().v}}</a>
-		  
-        </div>
-      </div>
-		
-      <!-- App Body -->
-      <div class="app-body" ng-class="{loading: loading}" >
-        <div ng-show="loading" class="app-content-loading">
-          <i class="fa fa-spinner fa-spin loading-spinner"></i>
-        </div>
-        <div class="app-content" style="background-color:#fff">
-			<super-page ng-controller="superPageWidget"></super-page>
-			<ng-view></ng-view>
-        </div>
-      </div>
-
+    	<div class="app">
+		QALET ADMIN
 	</div><!-- ~ .app -->
-
-
 	<root-control></root-control>	
   </body>
 </html>
-<style>
-.animate_area {
-  transition: all linear 0.5s;
-  background-color: lightblue;
-  height: 100%;
-	width:100%;
-}
-
-.animate_area.ng-hide {
-   height: 100%;
-  width: 0;
-}
-.animate_area.ng-show {
-  width:100%;
-}
-</style>
