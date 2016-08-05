@@ -7,7 +7,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-  background: url("http://visualoncloud.com/image/cloud_bg_blue03.jpg") no-repeat fixed ; 
+   /* background: url("http://visualoncloud.com/image/cloud_bg_blue03.jpg") no-repeat fixed ; */
 
 
 }
@@ -31,7 +31,7 @@ body {
     width: 480px;
     height: 240px;
     /*padding-left: 20px;*/
-    background: url("../images/qalet_logo.png") 0 0 ;
+	background: url("../images/qalet_logo.png") 0 0 ;
 }
 /* Custom page CSS
 -------------------------------------------------- */
