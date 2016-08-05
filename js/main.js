@@ -1,10 +1,9 @@
 var app = angular.module('qaletApp', [
-  'ngCookies'
-//  'ngRoute'
+
 ]);
 // app.controller('homepageController', function($rootScope, $scope, $window, $http, $compile, $timeout, $cookies){ 
 
-app.controller('homepageController', function($scope, $cookies){ 
+app.controller('homepageController', function($scope){ 
 
 		$scope.maxsize = {
 			"myFavorite":{max_size:4, item_class:'col-lg-3 col-md-3 col-sm-6 col-xs-6', box_class:'col-lg-12 col-md-12 col-sm-12'},
