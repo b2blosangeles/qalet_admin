@@ -4,9 +4,9 @@ var app = angular.module('qaletApp', [
 ]);
 app.controller('mainController', function($rootScope, $scope, $location, $cookies){ 
 	$rootScope.$on('$routeChangeStart', function(){ 
-		console.log($location);
 		$rootScope._super={};
-		$rootScope._super.status = false;
+		$rootScope._super.option = $location.$$path;
+		console.log($rootScope._super);
 	});
 });
 
