@@ -4,7 +4,7 @@
 		this.call = function() {
 			var JYclass = require( __dirname +'/inc/jiaoyouList.inc.js');
 			var o = new JYclass(pkg, env, req, res);
-			res.send(new Date().toString() + '==AAA==' + __dirname);
+			res.send(o.call());
 		};
 	};
 	
