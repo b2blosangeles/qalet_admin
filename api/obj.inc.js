@@ -1,7 +1,7 @@
 (function () { 
 	var obj =  function (pkg, env, req, res) {
 		this.load = function() {
-			res.send(new Date().toString() + '===');
+			res.send(new Date().toString() + '== * ==');
 		};
 	};
 	
