@@ -1,6 +1,3 @@
-res.send(__dirname);
-/*
-var o = require('api/obj.inc.js');
+var o = require(__dirname + '/api/obj.inc.js');
 var v = new o(pkg, env, req, res);
 v.load();
-*/
