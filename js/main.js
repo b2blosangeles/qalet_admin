@@ -1,5 +1,6 @@
 var app = angular.module('qaletApp', [
-  'ngRoute'
+  'ngRoute',
+  'ngCookies'
 ]);
 
 
