@@ -1,6 +1,13 @@
-// res.send(__dirname + '/obj.inc.js');
-delete require.cache[__dirname + '/obj.inc.js'];
-var o = require(__dirname + '/obj.inc.js');
-var v = new o(pkg, env, req, res);
-v.load();
 
+(function () { 
+	var obj =  function (pkg, env, req, res) {
+		this.call = function() {
+			res.send(new Date().toString() + '==niu==');
+		};
+	};
+	
+	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+		module.exports = obj;
+	}
+	
+})();
