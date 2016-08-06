@@ -30,7 +30,8 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 			$timeout(
 				function() {
 					$rootScope.popup('on');
-				}
+				}, 3000
+				
 			)
 			
 			
@@ -53,7 +54,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		if (code == 'on') {
 			$('.modal').modal();
 		} else {
-			$('.modal').modal('hide');
+			$('.modal').modal('hide', function() {alert(66); });
 		}
 	}
 	
@@ -68,7 +69,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		},
 		function(curv, prev) {	
 			if (curv) {
-				alert(curv);
+		//		alert(curv);
 			}
 		}
 	);	
