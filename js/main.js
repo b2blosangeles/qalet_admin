@@ -16,7 +16,10 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 	}; 	
 	
 	$scope.signout = function() {
-		$rootScope.progress_modal('on')
+		var kk = $('.modal');
+		
+
+		kk.modal();
 		$http({
 		  method: 'POST',
 		  url: '/api/authA.js',
@@ -26,9 +29,10 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 			$rootScope.progress_modal('off')
 		  }, function errorCallback(response) {
 			console.log(response);
-			$rootScope.progress_modal('off')
-			
-			$('.modal').on('hide', function (e) {
+			// $rootScope.progress_modal('off')
+			kk.modal('hide');
+			kk.on('hide', function (e) {
+					alert(9);
 					$rootScope.popup('on');
 				//setTimeout(function(){
 				//	// something here
@@ -63,7 +67,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		if (code == 'on') {
 			$('.modal').modal();
 		} else {
-			$('.modal').modal('hide', function() {alert(66); });
+			$('.modal').modal('hide');
 		}
 	}
 	
