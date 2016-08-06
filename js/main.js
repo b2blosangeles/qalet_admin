@@ -36,15 +36,19 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 app.controller('authController', function($rootScope, $scope, $location, $http, $cookies){ 
 	
 	$scope.signin = function() {
+		$rootScope.progress_modal('on');
 		$http({
 		  method: 'POST',
 		  url: '/api/authA.js',
 		  data: {opt:'signin', form_data:$scope.form_auth}
 		}).then(function successCallback(response) {
 			$rootScope._super.session = response.data;
+			$rootScope.progress_modal('off');
 			console.log(response);
 		  }, function errorCallback(response) {
-			alert(response.status +  response.data);
+			  
+			   alert(response.status +  response.data);
+			   $rootScope.progress_modal('off');
 		  });				
 	}
 	$scope.signup = function() {
