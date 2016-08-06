@@ -31,7 +31,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 			console.log(response);
 			// $rootScope.progress_modal('off')
 			kk.modal('hide');
-			kk.on('hide', function (e) {
+			kk.on('hidden.bs.modal', function (e) {
 					alert(9);
 					$rootScope.popup('on');
 				//setTimeout(function(){
