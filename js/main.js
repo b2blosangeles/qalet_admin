@@ -12,6 +12,10 @@ app.controller('mainController', function($rootScope, $scope, $location, $cookie
 		$rootScope._super.session = {uid:1, user:'John'};
 		
 	}
+
+	$scope.isSignin = function(v) {
+		return ($rootScope._super.session)?true:false;
+	} 
 	
 });
 
