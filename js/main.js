@@ -41,7 +41,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		//		}, 3000
 		//		
 		//	)
-		//  });
+		});
 	};
 	$rootScope.progress_modal = function(code) {
 		//$rootScope.Q['modal'] {
