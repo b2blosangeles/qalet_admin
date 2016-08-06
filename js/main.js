@@ -23,6 +23,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 			$rootScope.progress_modal('off')
 		  }, function errorCallback(response) {
 			console.log(response);
+			$rootScope.popup('on');
 			$rootScope.progress_modal('off')
 		  });
 	};
@@ -33,6 +34,15 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 			$('#loading_progress_bar').modal('hide');
 		}
 	}
+	
+	$rootScope.popup = function(code) {
+		if (code == 'on') {
+			$('#popup_warning').modal();
+		} else {
+			$('#popup_warning').modal('hide');
+		}
+	}
+	
 });
 
 app.controller('authController', function($rootScope, $scope, $location, $http, $cookies){ 
