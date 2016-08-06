@@ -37,7 +37,7 @@ app.controller('authController', function($rootScope, $scope, $location, $http, 
 			$rootScope._super.session = response.data;
 			console.log(response);
 		  }, function errorCallback(response) {
-			console.log(response);
+			alert(response.status +  response.data);
 		  });				
 	}
 });
