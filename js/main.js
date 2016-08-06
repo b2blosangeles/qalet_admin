@@ -7,6 +7,12 @@ app.controller('mainController', function($rootScope, $scope, $location, $cookie
 		if (!$rootScope._super) $rootScope._super={};
 		$rootScope._super.option = $location.$$path;
 	});
+	
+	$scope.signin = function() {
+		$rootScope._super.session = {uid:1, user:'John'};
+		
+	}
+	
 });
 
 app.controller('topMenuController', function($rootScope, $scope, $location, $cookies){ 
