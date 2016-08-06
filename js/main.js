@@ -46,6 +46,14 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 			$('.modal').modal();
 		} else {
 			$('.modal').modal('hide');
+			
+			$('.modal').on('show.bs.modal', function (e) {
+					alert('hidden');
+				//setTimeout(function(){
+				//	// something here
+				//}, 300);
+			});			
+			
 		}
 	}
 	
