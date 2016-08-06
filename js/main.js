@@ -14,7 +14,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $cookie
 	}
 
 	$scope.isSignin = function(v) {
-		return ($rootScope._super.session)?true:false;
+		return (($rootScope._super.session) && ($rootScope._super.session.uid))?true:false;
 	} 
 	
 });
