@@ -13,6 +13,10 @@ app.controller('mainController', function($rootScope, $scope, $location, $cookie
 		
 	}
 
+	$scope.signout = function() {
+		delete $rootScope._super.session;
+	}
+	
 	$scope.isSignin = function(v) {
 		return (($rootScope._super.session) && ($rootScope._super.session.uid))?true:false;
 	} 
