@@ -2,7 +2,7 @@ var app = angular.module('qaletApp', [
 	'ngCookies',
 	'ngRoute'
 ]);
-app.controller('mainController', function($rootScope, $scope, $location, $cookies){ 
+app.controller('mainController', function($rootScope, $scope, $location, $http, $cookies){ 
 	$rootScope.$on('$routeChangeStart', function(){ 
 		if (!$rootScope._super) $rootScope._super={};
 		$rootScope._super.option = $location.$$path;
