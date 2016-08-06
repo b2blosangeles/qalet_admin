@@ -37,6 +37,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 	}
 	
 	$rootScope.popup = function(code) {
+		$rootScope.Q = '222';
 		if (code == 'on') {
 			$('#popup_warning').modal();
 		} else {
@@ -48,6 +49,18 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 
 
 app.controller('modalController', function($rootScope, $scope, $location, $http, $cookies){ 
+	
+	$scope.$watch(
+		function() {
+			return $rootScope.Q;
+		},
+		function(curv, prev) {	
+			if (curv) {
+				alert(curv);
+			}
+		}
+	);	
+
 });	
 
 app.controller('authController', function($rootScope, $scope, $location, $http, $cookies){ 
