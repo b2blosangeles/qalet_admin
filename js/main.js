@@ -2,7 +2,7 @@ var app = angular.module('qaletApp', [
 	'ngCookies',
 	'ngRoute'
 ]);
-app.controller('mainController', function($rootScope, $scope, $location, $http, $cookies){ 
+app.controller('mainController', function($rootScope, $scope, $location, $http, $cookies, $timeout){ 
 	
 	$rootScope.Q = {};
 	
@@ -27,7 +27,12 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		  }, function errorCallback(response) {
 			console.log(response);
 			$rootScope.progress_modal('off')
-			$rootScope.popup('on');
+			$timeout(
+				function() {
+					$rootScope.popup('on');
+				}
+			)
+			
 			
 		  });
 	};
