@@ -15,6 +15,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		  data: {opt:'signin'}
 		}).then(function successCallback(response) {
 			$rootScope._super.session = response.data;
+			console.log(response);
 		  }, function errorCallback(response) {
 			console.log(response);
 		  });				
