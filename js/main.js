@@ -3,6 +3,9 @@ var app = angular.module('qaletApp', [
 	'ngRoute'
 ]);
 app.controller('mainController', function($rootScope, $scope, $location, $http, $cookies){ 
+	
+	$rootScope.Q = {};
+	
 	$rootScope.$on('$routeChangeStart', function(){ 
 		if (!$rootScope._super) $rootScope._super={};
 		$rootScope._super.option = $location.$$path;
@@ -29,10 +32,14 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		  });
 	};
 	$rootScope.progress_modal = function(code) {
+		$rootScope.Q['modal'] {
+			
+		}
+		
 		if (code == 'on') {
-			$('.loading_progress_bar').modal();
+			$('.modal').modal();
 		} else {
-			$('.loading_progress_bar').modal('hide');
+			$('.modal').modal('hide');
 		}
 	}
 	
