@@ -27,15 +27,21 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		  }, function errorCallback(response) {
 			console.log(response);
 			$rootScope.progress_modal('off')
-			$timeout(
-				function() {
-					$rootScope.popup('on');
-				}, 3000
-				
-			)
 			
+			$('.modal').on('show.bs.modal', function (e) {
+					alert('hidden');
+				//setTimeout(function(){
+				//	// something here
+				//}, 300);
+			});					
 			
-		  });
+		//	$timeout(
+		//		function() {
+		//			$rootScope.popup('on');
+		//		}, 3000
+		//		
+		//	)
+		//  });
 	};
 	$rootScope.progress_modal = function(code) {
 		//$rootScope.Q['modal'] {
@@ -47,12 +53,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		} else {
 			$('.modal').modal('hide');
 			
-			$('.modal').on('show.bs.modal', function (e) {
-					alert('hidden');
-				//setTimeout(function(){
-				//	// something here
-				//}, 300);
-			});			
+	
 			
 		}
 	}
