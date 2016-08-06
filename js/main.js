@@ -46,6 +46,10 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 	
 });
 
+
+app.controller('modalController', function($rootScope, $scope, $location, $http, $cookies){ 
+}	
+
 app.controller('authController', function($rootScope, $scope, $location, $http, $cookies){ 
 	
 	$scope.signin = function() {
