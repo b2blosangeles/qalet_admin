@@ -24,10 +24,11 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 			console.log(response);
 		  });
 	};
-	
+	$scope.loading = true;
 });
 
 app.controller('authController', function($rootScope, $scope, $location, $http, $cookies){ 
+	
 	$scope.signin = function() {
 		$http({
 		  method: 'POST',
