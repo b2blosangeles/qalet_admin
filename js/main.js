@@ -10,10 +10,10 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 	
 	$scope.signin = function() {
 		$http({
-		  method: 'GET',
+		  method: 'POST',
 		  url: '/api/auth.js'
 		}).then(function successCallback(response) {
-			console.log(response);
+			console.log(response.data);
 		  }, function errorCallback(response) {
 			console.log(response);
 		  });		
