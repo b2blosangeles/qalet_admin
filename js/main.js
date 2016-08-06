@@ -23,8 +23,9 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 			$rootScope.progress_modal('off')
 		  }, function errorCallback(response) {
 			console.log(response);
-			$rootScope.popup('on');
 			$rootScope.progress_modal('off')
+			$rootScope.popup('on');
+			
 		  });
 	};
 	$rootScope.progress_modal = function(code) {
