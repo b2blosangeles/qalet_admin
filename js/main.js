@@ -32,7 +32,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 			// $rootScope.progress_modal('off')
 			kk.modal('hide');
 			kk.on('hidden.bs.modal', function (e) {
-					alert(9);
+					kk.unbind('hidden.bs.modal');
 					$rootScope.popup('on');
 				//setTimeout(function(){
 				//	// something here
