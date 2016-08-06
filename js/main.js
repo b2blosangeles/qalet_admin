@@ -43,6 +43,9 @@ app.controller('authController', function($rootScope, $scope, $location, $http, 
 	}
 	$scope.signup = function() {
 		$('#loading_progress_bar').modal();
+		setTimeout(function() {
+			$('#loading_progress_bar').modal('hide');
+		}, 2000);
 	}	
 });
 
