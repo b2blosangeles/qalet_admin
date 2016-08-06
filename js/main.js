@@ -15,7 +15,7 @@ app.controller(authController', function($rootScope, $scope, $location, $http, $
 		$http({
 		  method: 'POST',
 		  url: '/api/auth.js',
-		  data: {opt:'signin', form_data:#scope.form_auth}
+		  data: {opt:'signin', form_data:$scope.form_auth}
 		}).then(function successCallback(response) {
 			$rootScope._super.session = response.data;
 			console.log(response);
