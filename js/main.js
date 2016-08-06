@@ -13,15 +13,17 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 	}; 	
 	
 	$scope.signout = function() {
+		$rootScope.progress_modal('on')
 		$http({
 		  method: 'POST',
-		  url: '/api/auth.js',
+		  url: '/api/authA.js',
 		  data: {opt:'signout'}
 		}).then(function successCallback(response) {
 			delete $rootScope._super.session;
-			console.log(response);
+			$rootScope.progress_modal('off')
 		  }, function errorCallback(response) {
 			console.log(response);
+			$rootScope.progress_modal('off')
 		  });
 	};
 	$rootScope.progress_modal = function(code) {
