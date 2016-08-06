@@ -9,6 +9,14 @@ app.controller('mainController', function($rootScope, $scope, $location, $cookie
 	});
 	
 	$scope.signin = function() {
+		$http({
+		  method: 'GET',
+		  url: '/api/auth.js'
+		}).then(function successCallback(response) {
+			console.log(response);
+		  }, function errorCallback(response) {
+			console.log(response);
+		  });		
 		$rootScope._super.session = {uid:1, user:'John'};
 		
 	}
