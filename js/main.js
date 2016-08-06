@@ -10,7 +10,21 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 	
 	$scope.isSignin = function(v) {
 		return (($rootScope._super.session) && ($rootScope._super.session.uid))?true:false;
-	} 
+	}; 	
+	
+	$scope.signout = function() {
+		$http({
+		  method: 'POST',
+		  url: '/api/auth.js',
+		  data: {opt:'signout'}
+		}).then(function successCallback(response) {
+			delete $rootScope._super.session;
+			console.log(response);
+		  }, function errorCallback(response) {
+			console.log(response);
+		  });
+	};
+	
 });
 
 app.controller('authController', function($rootScope, $scope, $location, $http, $cookies){ 
@@ -26,22 +40,6 @@ app.controller('authController', function($rootScope, $scope, $location, $http, 
 			console.log(response);
 		  });				
 	}
-
-	$scope.signout = function() {
-		$http({
-		  method: 'POST',
-		  url: '/api/auth.js',
-		  data: {opt:'signout'}
-		}).then(function successCallback(response) {
-			delete $rootScope._super.session;
-			console.log(response);
-		  }, function errorCallback(response) {
-			console.log(response);
-		  });
-	}
-	
-
-	
 });
 
 
