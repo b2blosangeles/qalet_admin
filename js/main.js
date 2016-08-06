@@ -28,7 +28,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 			console.log(response);
 			$rootScope.progress_modal('off')
 			
-			$('.modal').on('show.bs.modal', function (e) {
+			$('.modal').on('hidden.bs.modal', function (e) {
 					alert('hidden');
 				//setTimeout(function(){
 				//	// something here
