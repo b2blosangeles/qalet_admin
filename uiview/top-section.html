@@ -10,6 +10,12 @@
 			<li class="{{isActive('/contact')}}"><a href="#/contact">Contact</a></li>
 			<li class="{{isActive('/docs')}}"><a href="#/docs">Docs</a></li>
 		</ul>
+		<ul class="nav navbar-nav">
+			<li class="{{isActive('/')}}"><a href="#/">Home</a></li>
+			<li class="{{isActive('/about')}}"><a href="#/about">About</a></li>
+			<li class="{{isActive('/contact')}}"><a href="#/contact">Contact</a></li>
+			<li class="{{isActive('/docs')}}"><a href="#/docs">Docs</a></li>
+		</ul>		
 		<ul class="nav navbar-nav navbar-right" ng-if="isSignin()">
               <li><a href="JavaScript:void(0)">{{$root._super.session.user}}</a></li>
 			  <li><a href="JavaScript:void(0)" ng-click="signout()">Sign out</a></li>
