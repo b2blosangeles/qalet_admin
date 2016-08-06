@@ -24,7 +24,13 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 			console.log(response);
 		  });
 	};
-	$scope.loading = true;
+	$rootScope.progress_modal = function(code) {
+		if (code == 'on') {
+			$('#loading_progress_bar').modal();
+		} else {
+			$('#loading_progress_bar').modal('hide');
+		}
+	}
 });
 
 app.controller('authController', function($rootScope, $scope, $location, $http, $cookies){ 
@@ -42,9 +48,9 @@ app.controller('authController', function($rootScope, $scope, $location, $http, 
 		  });				
 	}
 	$scope.signup = function() {
-		$('#loading_progress_bar').modal();
+		$rootScope.progress_modal('on');
 		setTimeout(function() {
-			$('#loading_progress_bar').modal('hide');
+			$rootScope.progress_modal('off');
 		}, 2000);
 	}	
 });
