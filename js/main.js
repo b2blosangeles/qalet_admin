@@ -25,7 +25,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		$http({
 		  method: 'POST',
 		  url: '/api/auth.js',
-		  data: {opt:'signin'}
+		  data: {opt:'signout'}
 		}).then(function successCallback(response) {
 			delete $rootScope._super.session;
 			console.log(response);
