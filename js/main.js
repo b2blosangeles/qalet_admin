@@ -7,7 +7,10 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		if (!$rootScope._super) $rootScope._super={};
 		$rootScope._super.option = $location.$$path;
 	});
-
+	
+	$scope.isSignin = function(v) {
+		return (($rootScope._super.session) && ($rootScope._super.session.uid))?true:false;
+	} 
 });
 
 app.controller('authController', function($rootScope, $scope, $location, $http, $cookies){ 
@@ -37,9 +40,7 @@ app.controller('authController', function($rootScope, $scope, $location, $http, 
 		  });
 	}
 	
-	$scope.isSignin = function(v) {
-		return (($rootScope._super.session) && ($rootScope._super.session.uid))?true:false;
-	} 
+
 	
 });
 
