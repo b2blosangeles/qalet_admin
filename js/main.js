@@ -29,7 +29,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 			$rootScope.progress_modal('off')
 			
 			$('.modal').on('hidden.bs.modal', function (e) {
-					alert('hidden');
+					$rootScope.popup('on');
 				//setTimeout(function(){
 				//	// something here
 				//}, 300);
