@@ -30,18 +30,18 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 	};
 	$rootScope.progress_modal = function(code) {
 		if (code == 'on') {
-			$('#loading_progress_bar').modal();
+			$('.loading_progress_bar').modal();
 		} else {
-			$('#loading_progress_bar').modal('hide');
+			$('.loading_progress_bar').modal('hide');
 		}
 	}
 	
 	$rootScope.popup = function(code) {
 		$rootScope.Q = '222';
 		if (code == 'on') {
-			$('#popup_warning').modal();
+			$('.popup_warning').modal();
 		} else {
-			$('#popup_warning').modal('hide');
+			$('.popup_warning').modal('hide');
 		}
 	}
 	
