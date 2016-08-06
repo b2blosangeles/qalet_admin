@@ -22,7 +22,16 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 	}
 
 	$scope.signout = function() {
-		delete $rootScope._super.session;
+		$http({
+		  method: 'POST',
+		  url: '/api/auth.js',
+		  data: {opt:'signin'}
+		}).then(function successCallback(response) {
+			delete $rootScope._super.session;
+			console.log(response);
+		  }, function errorCallback(response) {
+			console.log(response);
+		  });
 	}
 	
 	$scope.isSignin = function(v) {
