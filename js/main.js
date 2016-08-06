@@ -32,9 +32,9 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		  });
 	};
 	$rootScope.progress_modal = function(code) {
-		$rootScope.Q['modal'] {
-			
-		}
+		//$rootScope.Q['modal'] {
+		//	
+		//}
 		
 		if (code == 'on') {
 			$('.modal').modal();
