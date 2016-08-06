@@ -19,7 +19,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		  url: '/api/authA.js',
 		  data: {opt:'signout'}
 		}).then(function successCallback(response) {
-			delete $rootScope._super.session;
+		//	delete $rootScope._super.session;
 			$rootScope.progress_modal('off')
 		  }, function errorCallback(response) {
 			console.log(response);
