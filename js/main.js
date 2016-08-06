@@ -46,9 +46,9 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 	$rootScope.popup = function(code) {
 	//	$rootScope.Q = '222';
 		if (code == 'on') {
-			$('.popup_warning').modal();
+			$('.modal').modal();
 		} else {
-			$('.popup_warning').modal('hide');
+			$('.modal').modal('hide');
 		}
 	}
 	
