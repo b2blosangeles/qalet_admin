@@ -28,7 +28,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 });
 
 app.controller('authController', function($rootScope, $scope, $location, $http, $cookies){ 
-	$('#loading_progress_bar').modal();
+	
 	$scope.signin = function() {
 		$http({
 		  method: 'POST',
@@ -41,6 +41,9 @@ app.controller('authController', function($rootScope, $scope, $location, $http, 
 			alert(response.status +  response.data);
 		  });				
 	}
+	$scope.signup = function() {
+		$('#loading_progress_bar').modal();
+	}	
 });
 
 
