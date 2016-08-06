@@ -39,7 +39,7 @@ app.controller('authController', function($rootScope, $scope, $location, $http, 
 		$rootScope.progress_modal('on');
 		$http({
 		  method: 'POST',
-		  url: '/api/authA.js',
+		  url: '/api/auth.js',
 		  data: {opt:'signin', form_data:$scope.form_auth}
 		}).then(function successCallback(response) {
 			$rootScope._super.session = response.data;
