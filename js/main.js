@@ -7,7 +7,10 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		if (!$rootScope._super) $rootScope._super={};
 		$rootScope._super.option = $location.$$path;
 	});
-	
+
+});
+
+app.controller(authController', function($rootScope, $scope, $location, $http, $cookies){ 
 	$scope.signin = function() {
 		$http({
 		  method: 'POST',
@@ -39,6 +42,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 	} 
 	
 });
+
 
 app.controller('topMenuController', function($rootScope, $scope, $location, $cookies){ 
 	$scope.isActive = function(v) {
