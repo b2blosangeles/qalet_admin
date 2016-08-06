@@ -13,7 +13,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		  method: 'POST',
 		  url: '/api/auth.js'
 		}).then(function successCallback(response) {
-			$rootScope._super.session = response.data);
+			$rootScope._super.session = response.data;
 		  }, function errorCallback(response) {
 			console.log(response);
 		  });				
