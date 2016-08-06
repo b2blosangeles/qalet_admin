@@ -11,7 +11,7 @@
 			<li class="{{isActive('/docs')}}"><a href="#/docs">Docs</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right" ng-if="isSignin()">
-              <li><a href="JavaScript:void(0)">{{root._super.session.user}}</a></li>
+              <li><a href="JavaScript:void(0)">{{$root._super.session.user}}</a></li>
 			  <li><a href="JavaScript:void(0)" ng-click="signout()">Sign out</a></li>
         </ul>
 	</div><!--/.nav-collapse -->
