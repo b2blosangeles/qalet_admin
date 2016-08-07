@@ -40,6 +40,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	$scope.$watch(
 		function() {
 			var r = {};
+			/*
 			for (var key in $rootScope.Q) {
 				if (new Date().getTime() - $rootScope.Q[key].stm > 0); {
 					if (!r.stm || r.stm > $rootScope.Q[key].stm) {
@@ -47,6 +48,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 					}
 				}
 			}
+			*/
 			return r;
 		},
 		function(curv, prev) {	
