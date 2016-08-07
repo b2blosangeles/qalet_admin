@@ -51,7 +51,9 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		},
 		function(curv, prev) {	
 			if (curv) {
-				console.log(curv);
+				$scope.popup = {
+					caption:new Date()
+				}
 			}
 		}
 	);	
@@ -65,11 +67,6 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 			}
 		}, 2000
 	)
-	
-	
-	$scope.popup = {
-		caption:new Date()
-	}
 	
 	$rootScope.addModalQ = function(id, data, holdtime, lifetime) {
 		if (!id) return false;
@@ -115,7 +112,13 @@ app.controller('authController', function($rootScope, $scope, $location, $http, 
 		  data: {opt:'signin', form_data:$scope.form_auth}
 		}).then(function successCallback(response) {
 			$rootScope._super.session = response.data;
-			$rootScope.progress_modal('off');
+			setTimeout(
+				function() {
+					$rootScope.progress_modal('off');
+				},
+				50000
+			)
+			
 		  }, function errorCallback(response) {
 			   $rootScope.progress_modal('off');
 		  });				
