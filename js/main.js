@@ -35,6 +35,22 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 
 
 app.controller('modalController', function($rootScope, $scope, $location, $http, $cookies){ 
+	
+	$scope.$watch(
+		function() {
+			return $rootScope.Q;
+		},
+		function(curv, prev) {	
+			if (curv) {
+		//		alert(curv);
+			}
+		}
+	);	
+	$scope.popup = {
+		caption:new Date();
+		
+	}
+	
 	$rootScope.progress_modal = function(code) {
 		if (code == 'on') {
 			$('.qalet_loading_progress_bar').modal();
@@ -50,16 +66,6 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 			$('.qalet_popup').modal('hide');
 		}
 	}	
-	$scope.$watch(
-		function() {
-			return $rootScope.Q;
-		},
-		function(curv, prev) {	
-			if (curv) {
-		//		alert(curv);
-			}
-		}
-	);	
 
 });	
 
