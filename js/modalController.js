@@ -19,6 +19,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 			return cnt;
 		},
 		function(curv, prev) {	
+			console.log('====');
 			if (curv) {
 				$scope.progress_message = '';
 				for (var k in $scope.Q) {
