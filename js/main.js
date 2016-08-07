@@ -16,10 +16,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 	}; 	
 	
 	$scope.signout = function() {
-		var kk = $('.modal');
-		
-
-		kk.modal();
+		$rootScope.progress_modal('on')
 		$http({
 		  method: 'POST',
 		  url: '/api/authA.js',
@@ -29,16 +26,15 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 			$rootScope.progress_modal('off')
 		  }, function errorCallback(response) {
 			console.log(response);
-			// $rootScope.progress_modal('off')
-			kk.modal('hide');
+			$rootScope.progress_modal('off')
+
+			/*
 			kk.on('hidden.bs.modal', function (e) {
 					kk.unbind('hidden.bs.modal');
 					$rootScope.popup('on');
-				//setTimeout(function(){
-				//	// something here
-				//}, 300);
-			});					
-			
+			});
+			*/			
+			$rootScope.popup('on');
 		//	$timeout(
 		//		function() {
 		//			$rootScope.popup('on');
@@ -48,26 +44,18 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		});
 	};
 	$rootScope.progress_modal = function(code) {
-		//$rootScope.Q['modal'] {
-		//	
-		//}
-		
 		if (code == 'on') {
-			$('.modal').modal();
+			$('.qalet_loading_progress_bar').modal();
 		} else {
-			$('.modal').modal('hide');
-			
-	
-			
+			$('.qalet_loading_progress_bar').modal('hide');
 		}
 	}
 	
 	$rootScope.popup = function(code) {
-	//	$rootScope.Q = '222';
 		if (code == 'on') {
-			$('.modal').modal();
+			$('.qalet_popup').modal();
 		} else {
-			$('.modal').modal('hide');
+			$('.qalet_popup').modal('hide');
 		}
 	}
 	
@@ -100,10 +88,7 @@ app.controller('authController', function($rootScope, $scope, $location, $http, 
 		}).then(function successCallback(response) {
 			$rootScope._super.session = response.data;
 			$rootScope.progress_modal('off');
-			console.log(response);
 		  }, function errorCallback(response) {
-			  
-			   alert(response.status +  response.data);
 			   $rootScope.progress_modal('off');
 		  });				
 	}
