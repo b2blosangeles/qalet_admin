@@ -57,7 +57,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 			}
 		}
 	);	
-	
+	/*
 	var _ITV = setInterval(
 		function() {
 			for (var key in $rootScope.Q) {
@@ -67,7 +67,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 			}
 		}, 2000
 	)
-	
+	*/
 	$rootScope.addModalQ = function(id, data, holdtime, lifetime) {
 		if (!id) return false;
 		$rootScope.Q[id] = {
