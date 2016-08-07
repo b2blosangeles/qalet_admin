@@ -19,7 +19,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		$rootScope.progress_modal('on', 'Sign out ...')
 		$http({
 		  method: 'POST',
-		  url: '/api/authA.js',
+		  url: '/api/auth.js',
 		  data: {opt:'signout'}
 		}).then(function successCallback(response) {
 			$rootScope.progress_modal('off')
