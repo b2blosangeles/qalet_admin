@@ -51,10 +51,10 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		},
 		function(curv, prev) {	
 			if (curv) {
-				if (type == 'progress_modal') {
+				if (curv.type == 'progress_modal') {
 					$scope.progress_modal($rootScope.Q.code, $rootScope.Q.message);
 				}
-				if (type == 'popup') {
+				if (curv.type == 'popup') {
 					$scope.pupup($rootScope.Q.code, $rootScope.Q.message);
 				}	
 				$rootScope.Q = {};
