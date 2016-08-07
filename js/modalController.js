@@ -6,7 +6,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 			var cnt;
 			for (var k in $scope.Q) {
 				if (new Date().getTime() > $scope.Q[k].end) {
-					delete $scope.Q[k];
+		//			delete $scope.Q[k];
 				}
 			}			
 			for (var k in $scope.Q) {
