@@ -63,7 +63,7 @@ app.controller('authController', function($rootScope, $scope, $location, $http, 
 		  });				
 	}
 	$scope.signup = function() {
-		$rootScope.progress_modal('signup', 'on', 'Sign up ...', 100);
+		$rootScope.progress_modal('signup', 'on', 'Sign up ...', 1);
 		$timeout(function() {
 			$rootScope.progress_modal('signup', 'off');
 		}, 2000);
