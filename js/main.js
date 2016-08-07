@@ -51,10 +51,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	}
 	
 	$rootScope.progress_modal = function(code, message) {
-		
-		$scope.popup = {
-			caption:message;
-		}		
+		$scope.popup = { caption:message }		
 		if (code == 'on') {
 			$('.qalet_loading_progress_bar').modal();
 		} else {
@@ -82,11 +79,12 @@ app.controller('authController', function($rootScope, $scope, $location, $http, 
 		  data: {opt:'signin', form_data:$scope.form_auth}
 		}).then(function successCallback(response) {
 			$rootScope._super.session = response.data;
-			 $timeout(
+			$timeout(
 				function() {
 					$rootScope.progress_modal('off');
-				}
-			 );
+				},
+				4000
+			);
 			
 		  }, function errorCallback(response) {
 			   $rootScope.progress_modal('off');
