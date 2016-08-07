@@ -22,7 +22,6 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		  url: '/api/authA.js',
 		  data: {opt:'signout'}
 		}).then(function successCallback(response) {
-		//	delete $rootScope._super.session;
 			$rootScope.progress_modal('off')
 		  }, function errorCallback(response) {
 			console.log(response);
@@ -30,6 +29,12 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 			$rootScope.popup('on');
 		});
 	};
+
+	
+});
+
+
+app.controller('modalController', function($rootScope, $scope, $location, $http, $cookies){ 
 	$rootScope.progress_modal = function(code) {
 		if (code == 'on') {
 			$('.qalet_loading_progress_bar').modal();
@@ -44,13 +49,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		} else {
 			$('.qalet_popup').modal('hide');
 		}
-	}
-	
-});
-
-
-app.controller('modalController', function($rootScope, $scope, $location, $http, $cookies){ 
-	
+	}	
 	$scope.$watch(
 		function() {
 			return $rootScope.Q;
