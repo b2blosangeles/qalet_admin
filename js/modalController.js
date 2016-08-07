@@ -8,6 +8,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 			
 			for (var k in $scope.Q) {
 				if (tm > $scope.Q[k].end) {
+					console.log(tm+'---'+$scope.Q[k].end+'==>deleted');
 					delete $scope.Q[k];
 				}
 			}			
