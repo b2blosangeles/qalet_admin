@@ -58,7 +58,7 @@ app.controller('authController', function($rootScope, $scope, $location, $http, 
 				function() {
 					$rootScope.progress_modal('off');
 				},
-				4000
+				1
 			);
 			
 		  }, function errorCallback(response) {
