@@ -29,7 +29,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 				$timeout(
 					function() {
 							
-						$rootScope.popup('on', {
+						$scope.popup('on', {
 							title:'API Error',
 							body: response.data
 						});
