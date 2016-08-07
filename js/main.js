@@ -81,11 +81,11 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	}	
 	
 	$rootScope.progress_modal = function(code, message) {
-		$rootScope.Q = {type:'progress_modal',code:code, message:messaage};
+		$rootScope.Q = {type:'progress_modal',code:code, message:message};
 	}
 	
 	$rootScope.popup = function(code, message) {
-		$rootScope.Q = {type:'popup',code:code, message:messaage};
+		$rootScope.Q = {type:'popup',code:code, message:message};
 	}	
 
 });	
