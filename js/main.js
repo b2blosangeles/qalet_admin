@@ -26,21 +26,8 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 			$rootScope.progress_modal('off')
 		  }, function errorCallback(response) {
 			console.log(response);
-			$rootScope.progress_modal('off')
-
-			/*
-			kk.on('hidden.bs.modal', function (e) {
-					kk.unbind('hidden.bs.modal');
-					$rootScope.popup('on');
-			});
-			*/			
+			$rootScope.progress_modal('off');		
 			$rootScope.popup('on');
-		//	$timeout(
-		//		function() {
-		//			$rootScope.popup('on');
-		//		}, 3000
-		//		
-		//	)
 		});
 	};
 	$rootScope.progress_modal = function(code) {
