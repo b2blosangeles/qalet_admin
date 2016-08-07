@@ -47,7 +47,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 					delete $scope.Q[k];
 				}
 			}
-			console.lof(delete $scope.Q);			
+			console.log($scope.Q);			
 		},50
 	);
 	
