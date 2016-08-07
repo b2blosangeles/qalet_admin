@@ -41,7 +41,9 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		function() {
 			var r = {};
 			for (var key in $rootScope.Q) {
-				console.log(key);
+				if (new Date().getTime() - $rootScope.Q[key].etm > 0 ); {
+					delete  $rootScope.Q[key];
+				}
 			};
 		},
 		function(curv, prev) {	
@@ -51,6 +53,15 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		}
 	);	
 	
+	var _ITV = setInterval(
+		function() {
+			for (var key in $rootScope.Q) {
+				if (new Date().getTime() - $rootScope.Q[key].etm > 0 ); {
+					delete  $rootScope.Q[key];
+				}
+			}
+		}, 2000
+	)
 	
 	
 	$scope.popup = {
