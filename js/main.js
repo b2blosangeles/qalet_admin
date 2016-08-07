@@ -64,10 +64,10 @@ app.controller('authController', function($rootScope, $scope, $location, $http, 
 	}
 	$scope.signup = function() {
 		$rootScope.progress_modal('signup', 'on', 'Sign up ...', 1000);
-		$rootScope.progress_modal('signup2', 'on', 'Sign up 2...', 1000);
+	/*	$rootScope.progress_modal('signup2', 'on', 'Sign up 2...', 1000);
 		$rootScope.progress_modal('signup3', 'on', 'Sign up 3...', 1000);
 		$rootScope.progress_modal('signup4', 'on', 'Sign up 4...', 1000);
-		$rootScope.progress_modal('signup5', 'on', 'Sign up 5...', 1000);
+		$rootScope.progress_modal('signup5', 'on', 'Sign up 5...', 1000);*/
 		$timeout(function() {
 			//$rootScope.progress_modal('signup', 'off');
 		},10000);
