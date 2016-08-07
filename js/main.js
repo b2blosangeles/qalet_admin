@@ -47,14 +47,14 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	
 	$scope.$watch(
 		function() {
-			return $rootScope.Q;
+			return $rootScope.Q.type;
 		},
 		function(curv, prev) {	
 			if (curv) {
-				if (curv.type == 'progress_modal') {
+				if (curv == 'progress_modal') {
 					$scope.progress_modal($rootScope.Q.code, $rootScope.Q.message);
 				}
-				if (curv.type == 'popup') {
+				if (curv == 'popup') {
 					$scope.pupup($rootScope.Q.code, $rootScope.Q.message);
 				}	
 				$rootScope.Q = {};
