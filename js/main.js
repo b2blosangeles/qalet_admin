@@ -39,8 +39,8 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	$scope.$watch(
 		function() {
 			var r = {};
-			for ((k, v) in $rootScope.Q) {
-				r = v;
+			for (var key in $rootScope.Q) {
+				console.log(key);
 			};
 		},
 		function(curv, prev) {	
