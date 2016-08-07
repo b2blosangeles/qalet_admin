@@ -24,9 +24,12 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		}).then(function successCallback(response) {
 			$rootScope.progress_modal('off')
 		  }, function errorCallback(response) {
-			console.log(response);
-			$rootScope.progress_modal('off');		
-			$rootScope.popup('on');
+			$timeout(
+				function() {
+					$rootScope.progress_modal('off');		
+					$rootScope.popup('on');
+				}, 4000
+			);	
 		});
 	};
 
