@@ -46,9 +46,6 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 			}
 		}
 	);	
-	$scope.popup = {
-		caption:new Date().toString();
-	}
 	
 	$rootScope.progress_modal = function(code, message) {
 		$scope.popup = { caption:message }		
