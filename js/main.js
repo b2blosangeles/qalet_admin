@@ -24,16 +24,19 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		}).then(function successCallback(response) {
 			$rootScope.progress_modal('off')
 		  }, function errorCallback(response) {
-			$timeout(
-				function() {
-					$rootScope.progress_modal('off');		
-					$rootScope.popup('on', {
-						title:'API Error',
-						body: response.data
-					});
-				}, 4000
-			);	
-		});
+				$rootScope.progress_modal('off');	
+				/*
+				$timeout(
+					function() {
+							
+						$rootScope.popup('on', {
+							title:'API Error',
+							body: response.data
+						});
+					}, 4000
+				);
+				*/	
+			});
 	};
 
 	
@@ -48,12 +51,18 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		},
 		function(curv, prev) {	
 			if (curv) {
-		//		alert(curv);
+				if (type == 'progress_modal') {
+					$scope.progress_modal($rootScope.Q.code, $rootScope.Q.message);
+				}
+				if (type == 'popup') {
+					$scope.pupup($rootScope.Q.code, $rootScope.Q.message);
+				}	
+				$rootScope.Q = {};
 			}
 		}
 	);	
-	
-	$rootScope.progress_modal = function(code, message) {
+
+	$scope.progress_modal = function(code, message) {
 		$scope.progress_message = message;	
 		if (code == 'on') {
 			$('.qalet_loading_progress_bar').modal();
@@ -62,13 +71,21 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		}
 	}
 	
-	$rootScope.popup = function(code, message) {
+	$scope.popup = function(code, message) {
 		$scope.popup_message = message;
 		if (code == 'on') {
 			$('.qalet_popup').modal();
 		} else {
 			$('.qalet_popup').modal('hide');
 		}
+	}	
+	
+	$rootScope.progress_modal = function(code, message) {
+		$rootScope.Q = {type:'progress_modal',code:code, messaage};
+	}
+	
+	$rootScope.popup = function(code, message) {
+		$rootScope.Q = {type:'popup',code:code, messaage};
 	}	
 
 });	
