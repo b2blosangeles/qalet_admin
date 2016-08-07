@@ -51,9 +51,9 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		},
 		function(curv, prev) {	
 			if (curv) {
-				$scope.popup = {
-					caption:new Date()
-				}
+			//	$scope.popup = {
+			//		caption:new Date()
+			//	}
 			}
 		}
 	);	
@@ -82,7 +82,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	
 	$rootScope.progress_modal = function(code) {
 		
-		$rootScope.addModalQ('id', 'data', 1000, 3000)
+	//	$rootScope.addModalQ('id', 'data', 1000, 3000)
 		
 		
 		if (code == 'on') {
