@@ -46,7 +46,8 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 					console.log(tm+'---'+$scope.Q[k].end+'==>deleted');
 					delete $scope.Q[k];
 				}
-			}				
+			}
+			console.lof(delete $scope.Q);			
 		},50
 	);
 	
