@@ -38,14 +38,20 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	
 	$scope.$watch(
 		function() {
-			return $rootScope.Q;
+			var r = {};
+			for ((k, v) in $rootScope.Q) {
+				r = v;
+			};
 		},
 		function(curv, prev) {	
 			if (curv) {
-		//		alert(curv);
+				console.log(curv);
 			}
 		}
 	);	
+	
+	
+	
 	$scope.popup = {
 		caption:new Date()
 	}
