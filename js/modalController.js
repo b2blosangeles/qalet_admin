@@ -12,7 +12,6 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 				if (curv == 'progress_modal') {
 					if ($rootScope.Q.code == 'on') $scope.Q[$rootScope.Q.id] = $rootScope.Q;
 					else delete $scope.Q[$rootScope.Q.id];
-				//	$scope.progress_modal($rootScope.Q.code, $rootScope.Q.message, $rootScope.Q.holdtime);
 				}
 				if (curv == 'popup_modal') {
 					$scope.popup($rootScope.Q.code, $rootScope.Q.message);
@@ -37,20 +36,6 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 			}
 		}
 	);	
-/*	
-// $('#modal.in').length > 0;
-	$scope.progress_modal = function(code, message, holdtime) {
-	//	console.log('holdtime==>');
-	//	console.log(holdtime);
-		
-		$scope.progress_message = message;	
-		if (code == 'on') {
-			$('.qalet_loading_progress_bar').modal();
-		} else {
-			$('.qalet_loading_progress_bar').modal('hide');
-		}
-	}
-*/	
 	$scope.popup = function(code, message) {
 		$scope.popup_message = message;
 		if (code == 'on') {
@@ -66,7 +51,8 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	}
 	
 	$rootScope.popup = function(code, message) {
-		$rootScope.Q = {type:'popup_modal',code:code, message:message};
+		//$rootScope.Q = {type:'popup_modal',code:code, message:message};
+		$scope.popup($rootScope.Q.code, $rootScope.Q.message);
 	}	
 
 });	
