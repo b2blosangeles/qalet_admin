@@ -3,6 +3,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	$scope.Q = {}; // handle multiple to do
 	$scope.$watch(
 		function() {
+			return Object.keys($scope.Q).length
 			var cnt;
 			for (var k in $scope.Q) {
 				if (new Date().getTime() > $scope.Q[k].end) {
