@@ -50,6 +50,20 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		caption:new Date()
 	}
 	
+	$rootScope.addModalQ = function(code, id, data) {
+		if (!id) return false;
+		$rootScope.Q[code] = {};
+		$rootScope.Q[code][id] = {
+			code:code, data:data, tm:new Date().getTime()
+		};
+	}	
+	$rootScope.deleteModalQ = function(code, id, data) {
+		if (!id) return false;
+		$rootScope.Q[code] = {};
+		delete $rootScope.Q[code][id];
+	}	
+	
+	
 	$rootScope.progress_modal = function(code) {
 		if (code == 'on') {
 			$('.qalet_loading_progress_bar').modal();
