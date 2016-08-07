@@ -16,7 +16,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 	}; 	
 	
 	$scope.signout = function() {
-		$rootScope.progress_modal('on', 'Sign out ...')
+		$rootScope.progress_modal('signout', 'on', 'Sign out ...')
 		$http({
 		  method: 'POST',
 		  url: '/api/auth.js',
@@ -26,7 +26,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 			delete $rootScope._super.session;
 			$rootScope.progress_modal('off')
 		  }, function errorCallback(response) {
-				$rootScope.progress_modal('off');	
+				$rootScope.progress_modal('signout', 'off');	
 				
 				$timeout(
 					function() {
@@ -47,7 +47,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 app.controller('authController', function($rootScope, $scope, $location, $http, $cookies,  $timeout){ 
 
 	$scope.signin = function() {
-		$rootScope.progress_modal('on', 'Login ...');
+		$rootScope.progress_modal('signin', 'on', 'Login ...');
 		$http({
 		  method: 'POST',
 		  url: '/api/auth.js',
@@ -62,13 +62,13 @@ app.controller('authController', function($rootScope, $scope, $location, $http, 
 			);
 			
 		  }, function errorCallback(response) {
-			   $rootScope.progress_modal('off');
+			   $rootScope.progress_modal('signin', 'off');
 		  });				
 	}
 	$scope.signup = function() {
-		$rootScope.progress_modal('on', 'Login ...', 100);
+		$rootScope.progress_modal('signup', 'on', 'Login ...', 100);
 		$timeout(function() {
-			$rootScope.progress_modal('off');
+			$rootScope.progress_modal('signup', 'off');
 		}, 2000);
 	}	
 });
