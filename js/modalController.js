@@ -1,12 +1,14 @@
 
-app.controller('modalController', function($rootScope, $scope, $location, $http, $cookies){ 
-	
+app.controller('modalController', function($rootScope, $scope, $location, $http, $cookies){ 	
 	$scope.Q = {}; // handle multiple to do
-
-	
 	$scope.$watch(
 		function() {
 			var cnt;
+			for (k in $scope.Q) {
+				if (new Date().getTime() > $scope.Q[k].end) {
+					delete $scope.Q[k];
+				}
+			}			
 			for (k in $scope.Q) {
 				if (new Date().getTime() < $scope.Q[k].end && new Date().getTime() > $scope.Q[k].start) {
 					cnt++;
