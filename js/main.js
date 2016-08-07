@@ -24,7 +24,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 		}).then(function successCallback(response) {
 			
 			delete $rootScope._super.session;
-			$rootScope.progress_modal('off')
+			$rootScope.progress_modal('signout', 'off')
 		  }, function errorCallback(response) {
 				$rootScope.progress_modal('signout', 'off');	
 				
