@@ -8,7 +8,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		function(curv, prev) {	
 			if (curv) {
 				if (curv == 'progress_modal') {
-					$scope.progress_modal($rootScope.Q.code, $rootScope.Q.message);
+					$scope.progress_modal($rootScope.Q.code, $rootScope.Q.message, $rootScope.Q.holdtime);
 				}
 				if (curv == 'popup') {
 					$scope.popup($rootScope.Q.code, $rootScope.Q.message);
@@ -18,7 +18,10 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		}
 	);	
 // $('#modal.in').length > 0;
-	$scope.progress_modal = function(code, message) {
+	$scope.progress_modal = function(code, message, holdtime) {
+		console.log('holdtime==>');
+		console.log(holdtime);
+		
 		$scope.progress_message = message;	
 		if (code == 'on') {
 			$('.qalet_loading_progress_bar').modal();
@@ -38,8 +41,8 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	}	
 	
 	
-	$rootScope.progress_modal = function(code, message) {
-		$rootScope.Q = {type:'progress_modal',code:code, message:message};
+	$rootScope.progress_modal = function(code, message, holdtime) {
+		$rootScope.Q = {type:'progress_modal',code:code, message:message, holdtime:holdtime};
 	}
 	
 	$rootScope.popup = function(code, message) {
