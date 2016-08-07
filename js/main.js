@@ -4,6 +4,7 @@ var app = angular.module('qaletApp', [
 ]);
 app.controller('mainController', function($rootScope, $scope, $location, $http, $cookies, $timeout){ 
 	
+	$rootScope._super={}
 	$rootScope.Q = {};
 	
 	$rootScope.$on('$routeChangeStart', function(){ 
