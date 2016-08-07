@@ -4,13 +4,15 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	$scope.$watch(
 		function() {
 			var cnt=0;
+			var dt = new Date(), tm = dt.getTime() * 1000 + dt.getMilliseconds();
+			
 			for (var k in $scope.Q) {
-				if (new Date().getTime() > $scope.Q[k].end) {
+				if (tm > $scope.Q[k].end) {
 					delete $scope.Q[k];
 				}
 			}			
 			for (var k in $scope.Q) {
-				if (new Date().getTime() < $scope.Q[k].end && new Date().getTime() >= $scope.Q[k].start) {
+				if (tm < $scope.Q[k].end && tm >= $scope.Q[k].start) {
 					cnt++;
 				}
 			}
@@ -39,8 +41,10 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	
 	
 	$rootScope.progress_modal = function(id, code, message, holdtime, maxtime) {
-		var t = (!holdtime)?0:holdtime, m = (!maxtime)?6000:maxtime;
-		if (code == 'on') $scope.Q[id] = {type:'progress_modal',code:code, message:message, start:new Date().getTime() + t , end: new Date().getTime() + m};
+		var t = (!holdtime)?0:holdtime, m = (!maxtime)?6000:maxtime; 
+		var dt = new Date(), tm = dt.getTime() * 1000 + dt.getMilliseconds();
+		
+		if (code == 'on') $scope.Q[id] = {type:'progress_modal',code:code, message:message, start:tm + t , end: tm + m};
 		else delete $scope.Q[id];
 		console.log($scope.Q[id]);
 	}
