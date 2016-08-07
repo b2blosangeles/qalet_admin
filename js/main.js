@@ -48,7 +48,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	);	
 	
 	$rootScope.progress_modal = function(code, message) {
-		$scope.popup = { caption:message }		
+		$scope.progress_message = message;	
 		if (code == 'on') {
 			$('.qalet_loading_progress_bar').modal();
 		} else {
