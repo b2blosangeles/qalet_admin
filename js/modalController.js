@@ -4,7 +4,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	$scope.$watch(
 		function() {
 			var cnt=0;
-			var dt = new Date(), tm = dt.getTime() * 1000 + dt.getMilliseconds();
+			var dt = new Date(), tm = dt.getTime();
 			
 			for (var k in $scope.Q) {
 				if (tm > $scope.Q[k].end) {
@@ -43,8 +43,8 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	
 	
 	$rootScope.progress_modal = function(id, code, message, holdtime, maxtime) {
-		var t = (!holdtime)?0:holdtime, m = (!maxtime)?6000:maxtime; 
-		var dt = new Date(), tm = dt.getTime() * 1000 + dt.getMilliseconds();
+		var t = (!holdtime)?0:holdtime, m = (!maxtime)?6:maxtime; 
+		var dt = new Date(), tm = dt.getTime()
 		
 		if (code == 'on') $scope.Q[id] = {type:'progress_modal',code:code, message:message, start:tm + t , end: tm + m};
 		else delete $scope.Q[id];
