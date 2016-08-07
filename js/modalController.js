@@ -14,7 +14,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 					else delete $scope.Q[$rootScope.Q.id];
 				//	$scope.progress_modal($rootScope.Q.code, $rootScope.Q.message, $rootScope.Q.holdtime);
 				}
-				if (curv == 'popup') {
+				if (curv == 'popup_modal') {
 					$scope.popup($rootScope.Q.code, $rootScope.Q.message);
 				}	
 				$rootScope.Q = {};
@@ -65,7 +65,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	}
 	
 	$rootScope.popup = function(code, message) {
-		$rootScope.Q = {type:'popup',code:code, message:message};
+		$rootScope.Q = {type:'popup_modal',code:code, message:message};
 	}	
 
 });	
