@@ -3,9 +3,6 @@ var app = angular.module('qaletApp', [
 	'ngRoute'
 ]);
 app.controller('mainController', function($rootScope, $scope, $location, $http, $cookies, $timeout){ 
-	
-	$rootScope.Q = {};
-	
 	$rootScope.$on('$routeChangeStart', function(){ 
 		if (!$rootScope._super) $rootScope._super={};
 		$rootScope._super.option = $location.$$path;

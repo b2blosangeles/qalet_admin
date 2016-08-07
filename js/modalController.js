@@ -2,25 +2,7 @@
 app.controller('modalController', function($rootScope, $scope, $location, $http, $cookies){ 
 	
 	$scope.Q = {}; // handle multiple to do
-/*
-	$scope.$watch(
-		function() {
-			return $rootScope.Q.type;
-		},
-		function(curv, prev) {	
-			if (curv) {
-				if (curv == 'progress_modal') {
-					if ($rootScope.Q.code == 'on') $scope.Q[$rootScope.Q.id] = $rootScope.Q;
-					else delete $scope.Q[$rootScope.Q.id];
-				}
-				if (curv == 'popup_modal') {
-					$scope.popup($rootScope.Q.code, $rootScope.Q.message);
-				}	
-				$rootScope.Q = {};
-			}
-		}
-	);	
-*/	
+
 	$scope.$watch(
 		function() {
 			return Object.keys($scope.Q).length;
@@ -47,13 +29,11 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	
 	
 	$rootScope.progress_modal = function(id, code, message, holdtime) {
-	//	$rootScope.Q = {type:'progress_modal',code:code, message:message, holdtime:holdtime, id:id};
 		if (code == 'on') $scope.Q[id] = {type:'progress_modal',code:code, message:message, holdtime:holdtime, id:id};
 		else delete $scope.Q[id];
 	}
 	
 	$rootScope.popup = function(code, message) {
-		//$rootScope.Q = {type:'popup_modal',code:code, message:message};
 		$scope.popup(code, message);
 	}	
 
