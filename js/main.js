@@ -47,12 +47,14 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		}
 	);	
 	$scope.popup = {
-		caption:new Date()
+		caption:new Date().toString();
 	}
 	
-	$rootScope.progress_modal = function(code) {
+	$rootScope.progress_modal = function(code, message) {
 		
-		
+		$scope.popup = {
+			caption:message;
+		}		
 		if (code == 'on') {
 			$('.qalet_loading_progress_bar').modal();
 		} else {
@@ -70,17 +72,22 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 
 });	
 
-app.controller('authController', function($rootScope, $scope, $location, $http, $cookies){ 
+app.controller('authController', function($rootScope, $scope, $location, $http, $cookies,  $timeout){ 
 	
 	$scope.signin = function() {
-		$rootScope.progress_modal('on');
+		$rootScope.progress_modal('on', 'Login ...');
 		$http({
 		  method: 'POST',
 		  url: '/api/auth.js',
 		  data: {opt:'signin', form_data:$scope.form_auth}
 		}).then(function successCallback(response) {
 			$rootScope._super.session = response.data;
-			$rootScope.progress_modal('off');
+			 $timeout(
+				function() {
+					$rootScope.progress_modal('off');
+				}
+			 );
+			
 		  }, function errorCallback(response) {
 			   $rootScope.progress_modal('off');
 		  });				
