@@ -28,8 +28,9 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	}	
 	
 	
-	$rootScope.progress_modal = function(id, code, message, holdtime) {
-		if (code == 'on') $scope.Q[id] = {type:'progress_modal',code:code, message:message, holdtime:holdtime, id:id};
+	$rootScope.progress_modal = function(id, code, message, holdtime, maxtime) {
+		var t = (!holdtime)?0:holdtime, m = (!maxtime)?6000:maxtime;
+		if (code == 'on') $scope.Q[id] = {type:'progress_modal',code:code, message:message, start:new Date().getTime() + t , end: new Date().getTime() + m};
 		else delete $scope.Q[id];
 	}
 	
