@@ -11,8 +11,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 					console.log(tm+'---'+$scope.Q[k].end+'==>deleted');
 					delete $scope.Q[k];
 				}
-			}				
-		
+			}			
 			for (var k in $scope.Q) {
 				if (tm < $scope.Q[k].end && tm >= $scope.Q[k].start) {
 					cnt++;
@@ -43,19 +42,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		}
 	}	
 	
-	/*
-	setInterval(
-		function() {
-			var dt = new Date(), tm = dt.getTime();
-			for (var k in $scope.Q) {
-				if (tm > $scope.Q[k].end) {
-					console.log(tm+'---'+$scope.Q[k].end+'==>deleted');
-					delete $scope.Q[k];
-				}
-			}		
-		},50
-	);
-	*/
+	
 	$rootScope.progress_modal = function(id, code, message, holdtime, maxtime) {
 		var t = (!holdtime)?0:holdtime, m = (!maxtime)?10000:maxtime; 
 		var dt = new Date(), tm = dt.getTime()
