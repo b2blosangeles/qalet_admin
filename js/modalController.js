@@ -27,7 +27,6 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		$scope.progress_message = message;	
 		if (code == 'on') {
 			$('.qalet_loading_progress_bar').modal();
-			$('.qalet_loading_progress_bar').modal();
 		} else {
 			$('.qalet_loading_progress_bar').modal('hide');
 		}
