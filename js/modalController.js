@@ -44,7 +44,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	
 	
 	$rootScope.progress_modal = function(id, code, message, holdtime, maxtime) {
-		var t = (!holdtime)?0:holdtime, m = (!maxtime)?6000:maxtime; 
+		var t = (!holdtime)?0:holdtime, m = (!maxtime)?10000:maxtime; 
 		var dt = new Date(), tm = dt.getTime()
 		
 		if (code == 'on') $scope.Q[id] = {type:'progress_modal',code:code, message:message, start:tm + t , end: tm + m};
