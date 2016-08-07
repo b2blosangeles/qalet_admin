@@ -6,13 +6,13 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 			var cnt=0;
 			for (var k in $scope.Q) {
 				if (new Date().getTime() > $scope.Q[k].end) {
-		//			delete $scope.Q[k];
+					delete $scope.Q[k];
 				}
 			}			
 			for (var k in $scope.Q) {
-			//	if (new Date().getTime() < $scope.Q[k].end && new Date().getTime() > $scope.Q[k].start) {
+				if (new Date().getTime() < $scope.Q[k].end && new Date().getTime() > $scope.Q[k].start) {
 					cnt++;
-			//	}
+				}
 			}
 			return cnt;
 		},
