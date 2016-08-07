@@ -28,7 +28,8 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		},
 		function(curv, prev) {	
 			if (curv) {
-				console.log(curv);
+				var o = $scope.Q[Object.keys($scope.Q)[0]];
+				$scope.progress_modal(o.code, o.message, o.holdtime);
 			}
 		}
 	);	
