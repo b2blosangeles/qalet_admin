@@ -17,10 +17,11 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 			}
 		}
 	);	
-
+// $('#modal.in').length > 0;
 	$scope.progress_modal = function(code, message) {
 		$scope.progress_message = message;	
 		if (code == 'on') {
+			$('.qalet_loading_progress_bar').modal();
 			$('.qalet_loading_progress_bar').modal();
 		} else {
 			$('.qalet_loading_progress_bar').modal('hide');
