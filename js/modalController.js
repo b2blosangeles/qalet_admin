@@ -29,11 +29,13 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		function(curv, prev) {	
 			if (curv) {
 				var o = $scope.Q[Object.keys($scope.Q)[0]];
-				$scope.progress_modal(o.code, o.message, o.holdtime);
+				$('.qalet_loading_progress_bar').modal();
+			} else {
+				$('.qalet_loading_progress_bar').modal('hide');
 			}
 		}
 	);	
-	
+/*	
 // $('#modal.in').length > 0;
 	$scope.progress_modal = function(code, message, holdtime) {
 	//	console.log('holdtime==>');
@@ -46,7 +48,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 			$('.qalet_loading_progress_bar').modal('hide');
 		}
 	}
-	
+*/	
 	$scope.popup = function(code, message) {
 		$scope.popup_message = message;
 		if (code == 'on') {
