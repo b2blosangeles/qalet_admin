@@ -112,13 +112,14 @@ app.controller('authController', function($rootScope, $scope, $location, $http, 
 		  data: {opt:'signin', form_data:$scope.form_auth}
 		}).then(function successCallback(response) {
 			$rootScope._super.session = response.data;
+			/*
 			setTimeout(
 				function() {
 					$rootScope.progress_modal('off');
 				},
 				50000
-			)
-			
+			);
+			*/
 		  }, function errorCallback(response) {
 			   $rootScope.progress_modal('off');
 		  });				
