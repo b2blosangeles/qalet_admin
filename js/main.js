@@ -27,7 +27,10 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 			$timeout(
 				function() {
 					$rootScope.progress_modal('off');		
-					$rootScope.popup('on');
+					$rootScope.popup('on', {
+						title:'API Error',
+						body: response.data
+					});
 				}, 4000
 			);	
 		});
