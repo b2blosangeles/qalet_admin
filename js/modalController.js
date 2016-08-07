@@ -47,7 +47,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 					delete $scope.Q[k];
 				}
 			}
-			console.log($scope.Q);			
+			
 		},50
 	);
 	
