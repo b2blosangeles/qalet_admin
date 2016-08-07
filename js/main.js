@@ -59,7 +59,8 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		}
 	}
 	
-	$rootScope.popup = function(code) {
+	$rootScope.popup = function(code, message) {
+		$scope.popup_message = message;
 		if (code == 'on') {
 			$('.qalet_popup').modal();
 		} else {
