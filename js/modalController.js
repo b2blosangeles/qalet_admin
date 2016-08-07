@@ -21,6 +21,18 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 			}
 		}
 	);	
+	
+	$scope.$watch(
+		function() {
+			return Object.keys($scope.Q).length;
+		},
+		function(curv, prev) {	
+			if (curv) {
+				console.log(curv);
+			}
+		}
+	);	
+	
 // $('#modal.in').length > 0;
 	$scope.progress_modal = function(code, message, holdtime) {
 	//	console.log('holdtime==>');
