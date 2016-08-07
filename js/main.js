@@ -50,17 +50,15 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		caption:new Date()
 	}
 	
-	$rootScope.addModalQ = function(code, id, data) {
+	$rootScope.addModalQ = function(id, data, holdtime, lifetime) {
 		if (!id) return false;
-		$rootScope.Q[code] = {};
-		$rootScope.Q[code][id] = {
-			code:code, data:data, tm:new Date().getTime()
+		$rootScope.Q[id] = {
+			code:code, data:data, stm:new Date().getTime() + holdtime, etm:new Date().getTime() + holdtime + lifetime
 		};
 	}	
-	$rootScope.deleteModalQ = function(code, id, data) {
+	$rootScope.deleteModalQ = function(id) {
 		if (!id) return false;
-		$rootScope.Q[code] = {};
-		delete $rootScope.Q[code][id];
+		delete $rootScope.Q[id];
 	}	
 	
 	
