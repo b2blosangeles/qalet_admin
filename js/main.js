@@ -59,7 +59,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	$rootScope.addModalQ = function(id, data, holdtime, lifetime) {
 		if (!id) return false;
 		$rootScope.Q[id] = {
-			code:code, data:data, stm:new Date().getTime() + holdtime, etm:new Date().getTime() + holdtime + lifetime
+			code:code, data:data, stm:new Date().getTime() + holdtime, etm:new Date().getTime() + lifetime
 		};
 	}	
 	$rootScope.deleteModalQ = function(id) {
@@ -69,6 +69,10 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	
 	
 	$rootScope.progress_modal = function(code) {
+		
+		$rootScope.addModalQ('id', 'data', 1000, 3000)
+		
+		
 		if (code == 'on') {
 			$('.qalet_loading_progress_bar').modal();
 		} else {
