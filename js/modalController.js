@@ -29,7 +29,7 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		function(curv, prev) {	
 			if (curv) {
 				var o = $scope.Q[Object.keys($scope.Q)[0]];
-				$scope.popup_message = o.message;
+				$scope.progress_message = o.message;
 				console.log(o);
 				$('.qalet_loading_progress_bar').modal();
 			} else {
