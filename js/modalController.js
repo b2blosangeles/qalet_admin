@@ -1,6 +1,6 @@
 
 app.controller('modalController', function($rootScope, $scope, $location, $http, $cookies){ 	
-	$scope.Q = {}; // handle multiple to do
+	$scope.Q = {}; 
 	$scope.$watch(
 		function() {
 			var cnt=0;
@@ -19,7 +19,6 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 			return cnt;
 		},
 		function(curv, prev) {	
-			console.log('====');
 			if (curv) {
 				$scope.progress_message = '';
 				for (var k in $scope.Q) {
