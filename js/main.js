@@ -4,7 +4,6 @@ var app = angular.module('qaletApp', [
 ]);
 app.controller('mainController', function($rootScope, $scope, $location, $http, $cookies, $timeout){ 
 	
-	$rootScope._super={}
 	$rootScope.Q = {};
 	
 	$rootScope.$on('$routeChangeStart', function(){ 
@@ -39,52 +38,19 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	
 	$scope.$watch(
 		function() {
-			var r = {};
-			/*
-			for (var key in $rootScope.Q) {
-				if (new Date().getTime() - $rootScope.Q[key].stm > 0); {
-					if (!r.stm || r.stm > $rootScope.Q[key].stm) {
-						r = $rootScope.Q[key];
-					}
-				}
-			}
-			*/
-			return r;
+			return $rootScope.Q;
 		},
 		function(curv, prev) {	
 			if (curv) {
-			//	$scope.popup = {
-			//		caption:new Date()
-			//	}
+		//		alert(curv);
 			}
 		}
 	);	
-	/*
-	var _ITV = setInterval(
-		function() {
-			for (var key in $rootScope.Q) {
-				if (new Date().getTime() - $rootScope.Q[key].etm > 0 ); {
-					delete  $rootScope.Q[key];
-				}
-			}
-		}, 2000
-	)
-	*/
-	$rootScope.addModalQ = function(id, data, holdtime, lifetime) {
-		if (!id) return false;
-		$rootScope.Q[id] = {
-			data:data, stm:new Date().getTime() + holdtime, etm:new Date().getTime() + lifetime
-		};
-	}	
-	$rootScope.deleteModalQ = function(id) {
-		if (!id) return false;
-		delete $rootScope.Q[id];
-	}	
-	
+	$scope.popup = {
+		caption:new Date()
+	}
 	
 	$rootScope.progress_modal = function(code) {
-		
-	//	$rootScope.addModalQ('id', 'data', 1000, 3000)
 		
 		
 		if (code == 'on') {
@@ -114,14 +80,7 @@ app.controller('authController', function($rootScope, $scope, $location, $http, 
 		  data: {opt:'signin', form_data:$scope.form_auth}
 		}).then(function successCallback(response) {
 			$rootScope._super.session = response.data;
-			/*
-			setTimeout(
-				function() {
-					$rootScope.progress_modal('off');
-				},
-				50000
-			);
-			*/
+			$rootScope.progress_modal('off');
 		  }, function errorCallback(response) {
 			   $rootScope.progress_modal('off');
 		  });				
