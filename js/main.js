@@ -25,7 +25,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 			$rootScope.progress_modal('off')
 		  }, function errorCallback(response) {
 				$rootScope.progress_modal('off');	
-				/*
+				
 				$timeout(
 					function() {
 							
@@ -35,7 +35,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 						});
 					}, 4000
 				);
-				*/	
+					
 			});
 	};
 
