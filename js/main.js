@@ -16,7 +16,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 	}; 	
 	
 	$scope.signout = function() {
-		$rootScope.progress_modal('on')
+		$rootScope.progress_modal('on', , 'Sign out ...')
 		$http({
 		  method: 'POST',
 		  url: '/api/authA.js',
