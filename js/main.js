@@ -56,7 +56,7 @@ app.controller('authController', function($rootScope, $scope, $location, $http, 
 			$rootScope._super.session = response.data;
 			$timeout(
 				function() {
-					$rootScope.progress_modal('off');
+					$rootScope.progress_modal('signin','off');
 				},
 				1
 			);
