@@ -10,9 +10,9 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 				}
 			}			
 			for (var k in $scope.Q) {
-				if (new Date().getTime() < $scope.Q[k].end && new Date().getTime() > $scope.Q[k].start) {
+			//	if (new Date().getTime() < $scope.Q[k].end && new Date().getTime() > $scope.Q[k].start) {
 					cnt++;
-				}
+			//	}
 			}
 			return cnt;
 		},
