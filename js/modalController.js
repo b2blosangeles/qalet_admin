@@ -1,5 +1,7 @@
 
 app.controller('modalController', function($rootScope, $scope, $location, $http, $cookies){ 
+	
+	$scope.Q = {}; // handle multiple to do
 
 	$scope.$watch(
 		function() {
@@ -19,8 +21,8 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 	);	
 // $('#modal.in').length > 0;
 	$scope.progress_modal = function(code, message, holdtime) {
-		console.log('holdtime==>');
-		console.log(holdtime);
+	//	console.log('holdtime==>');
+	//	console.log(holdtime);
 		
 		$scope.progress_message = message;	
 		if (code == 'on') {

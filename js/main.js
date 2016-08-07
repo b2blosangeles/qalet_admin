@@ -45,7 +45,7 @@ app.controller('mainController', function($rootScope, $scope, $location, $http, 
 });
 
 app.controller('authController', function($rootScope, $scope, $location, $http, $cookies,  $timeout){ 
-	
+
 	$scope.signin = function() {
 		$rootScope.progress_modal('on', 'Login ...');
 		$http({
