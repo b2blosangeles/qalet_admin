@@ -10,12 +10,14 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 		function(curv, prev) {	
 			if (curv) {
 				if (curv == 'progress_modal') {
+					$scope.Q[$rootScope.Q.id] = $rootScope.Q;
 					$scope.progress_modal($rootScope.Q.code, $rootScope.Q.message, $rootScope.Q.holdtime);
 				}
 				if (curv == 'popup') {
 					$scope.popup($rootScope.Q.code, $rootScope.Q.message);
 				}	
 				$rootScope.Q = {};
+				console.log($scope.Q);
 			}
 		}
 	);	
