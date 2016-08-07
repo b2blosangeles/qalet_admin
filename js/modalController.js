@@ -1,22 +1,5 @@
 
 app.controller('modalController', function($rootScope, $scope, $location, $http, $cookies){ 
-	
-	$scope.$watch(
-		function() {
-			return $rootScope.Q.type;
-		},
-		function(curv, prev) {	
-			if (curv) {
-				if (curv == 'progress_modal') {
-					$scope.progress_modal($rootScope.Q.code, $rootScope.Q.message);
-				}
-				if (curv == 'popup') {
-					$scope.pupup($rootScope.Q.code, $rootScope.Q.message);
-				}	
-				$rootScope.Q = {};
-			}
-		}
-	);	
 
 	$scope.progress_modal = function(code, message) {
 		$scope.progress_message = message;	
@@ -35,6 +18,25 @@ app.controller('modalController', function($rootScope, $scope, $location, $http,
 			$('.qalet_popup').modal('hide');
 		}
 	}	
+	
+	$scope.$watch(
+		function() {
+			return $rootScope.Q.type;
+		},
+		function(curv, prev) {	
+			if (curv) {
+				if (curv == 'progress_modal') {
+					$scope.progress_modal($rootScope.Q.code, $rootScope.Q.message);
+				}
+				if (curv == 'popup') {
+					$scope.pupup($rootScope.Q.code, $rootScope.Q.message);
+				}	
+				$rootScope.Q = {};
+			}
+		}
+	);	
+
+
 	
 	$rootScope.progress_modal = function(code, message) {
 		$rootScope.Q = {type:'progress_modal',code:code, message:message};
